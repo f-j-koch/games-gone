@@ -1,0 +1,320 @@
+/*
+ * Grundlegende Styles für den Bundesliga-Blog.
+ * Das Design orientiert sich an aktuellen Best Practices für Sportblogs:
+ * - Eine intuitive Navigation mit klarer Struktur【404096284705330†L92-L103】.
+ * - Responsives Layout, das auf Mobilgeräten und Desktop gut funktioniert【404096284705330†L105-L115】.
+ * - Hochwertige visuelle Elemente, die das Erlebnis bereichern【404096284705330†L117-L128】.
+ * - Gut lesbare Typografie mit klarer Hierarchie【404096284705330†L130-L140】.
+ */
+
+/* Reset grundlegender Elemente */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.6;
+  color: #222;
+  background-color: #f8f8f8;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: #006bb6;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Container for width limitations */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Navigation styles */
+.site-header {
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.8rem 0;
+}
+
+.logo a {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #006bb6;
+}
+
+/* Main navigation list */
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.main-nav a {
+  color: #222;
+  font-weight: 500;
+  padding: 0.5rem;
+  border-radius: 4px;
+}
+
+.main-nav a:hover,
+.main-nav a:focus {
+  background-color: #f0f0f0;
+}
+
+/* Hamburger button for mobile */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.nav-toggle .hamburger,
+.nav-toggle .hamburger::before,
+.nav-toggle .hamburger::after {
+  width: 25px;
+  height: 3px;
+  background-color: #222;
+  display: block;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.nav-toggle .hamburger::before,
+.nav-toggle .hamburger::after {
+  content: '';
+  position: absolute;
+  left: 0;
+}
+
+.nav-toggle .hamburger::before {
+  top: -7px;
+}
+.nav-toggle .hamburger::after {
+  top: 7px;
+}
+
+/* Hero section */
+.hero {
+  position: relative;
+  color: #fff;
+  text-align: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  padding: 2rem;
+}
+
+.hero-title {
+  font-size: 2.4rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.hero-text {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+.btn-cta {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: #006bb6;
+  color: #fff;
+  border-radius: 4px;
+  font-weight: 700;
+  transition: background-color 0.3s ease;
+}
+
+.btn-cta:hover {
+  background-color: #00548b;
+}
+
+/* Posts grid */
+.posts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+}
+
+.post-preview {
+  background-color: #fff;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.post-preview img.post-image {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+}
+
+.post-preview h3 {
+  font-size: 1.2rem;
+  margin: 0.75rem 1rem;
+  line-height: 1.3;
+}
+
+.post-meta {
+  font-size: 0.85rem;
+  color: #666;
+  margin: 0 1rem 0.5rem;
+}
+
+.post-excerpt {
+  font-size: 0.95rem;
+  margin: 0 1rem 1rem;
+  flex-grow: 1;
+  color: #444;
+}
+
+.read-more {
+  display: block;
+  text-align: right;
+  margin: 0 1rem 1rem;
+  color: #006bb6;
+  font-weight: 600;
+}
+
+/* Season overview section */
+.season-info {
+  background-color: #e5f1f8;
+  padding: 2rem 0;
+}
+
+.season-table-wrapper {
+  overflow-x: auto;
+}
+
+.season-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.season-table th,
+.season-table td {
+  padding: 0.75rem 1rem;
+  border: 1px solid #d0d7de;
+  text-align: left;
+}
+
+.season-table th {
+  background-color: #006bb6;
+  color: #fff;
+  font-weight: 600;
+}
+
+.season-table tr:nth-child(even) {
+  background-color: #f4f9fc;
+}
+
+/* Footer styles */
+.site-footer {
+  background-color: #1a1a1a;
+  color: #ccc;
+  padding: 1.5rem 0;
+  margin-top: 2rem;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-nav {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.footer-nav a {
+  color: #ccc;
+  font-size: 0.9rem;
+}
+
+.footer-nav a:hover {
+  color: #fff;
+}
+
+/* Mobile navigation responsive styles */
+@media (max-width: 768px) {
+  .main-nav ul {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: #fff;
+    flex-direction: column;
+    width: 200px;
+    max-height: 0;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    transition: max-height 0.3s ease;
+    border-radius: 0 0 4px 4px;
+  }
+
+  .main-nav ul.open {
+    max-height: 400px;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+
+  .main-nav ul li {
+    margin: 0;
+  }
+
+  .main-nav a {
+    padding: 0.75rem 1rem;
+    display: block;
+  }
+}
+
+/* Blog listing and article pages will reuse many of these base styles. Additional selectors will be defined in respective pages if needed. */
